@@ -1,0 +1,58 @@
+ruslan@ruslan-desktop ~/trainee1 $ git config --global user.email altymyshev@reg.ru
+ruslan@ruslan-desktop ~/trainee1 $ git config --global user.name "Руслан Алтымышев"
+
+git status
+На ветке master
+Ваша ветка обновлена в соответствии с «origin/master».
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	task1.1
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+
+ruslan@ruslan-desktop ~/trainee1 $ git add task1.1
+ruslan@ruslan-desktop ~/trainee1 $ git commit
+[master 04ce201] new taks
+ 1 file changed, 41 insertions(+)
+ create mode 100644 task1.1
+ruslan@ruslan-desktop ~/trainee1 $ git push
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.97 KiB | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:Altymyshev/trainee1.git
+   0e87de5..04ce201  master -> master
+
+ruslan@ruslan-desktop ~ $ git clone trainee1 trainee_clone
+Клонирование в «trainee_clone»…
+готово.
+
+Так как сразу не спрятал файл и зкоммитил его,  то пришлось удалять:
+
+ruslan@ruslan-desktop ~/trainee1 $ git rm --cached task1.1
+rm 'task1.1'
+ruslan@ruslan-desktop ~/trainee1 $ git commit -m'removed task1.1'
+[master 389046b] removed task1.1
+ 1 file changed, 41 deletions(-)
+ delete mode 100644 task1.1
+
+ruslan@ruslan-desktop ~/trainee1 $ git status
+На ветке master
+Ваша ветка опережает «origin/master» на 1 коммит.
+  (используйте «git push», чтобы опубликовать ваши локальные коммиты)
+
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:                   .gitignore
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+
+
+
